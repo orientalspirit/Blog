@@ -1,0 +1,4 @@
+2009-12-11 06:28:15 Notice: Notice (8): Undefined variable: comment_author in [/home/lunks/www/apps/blog/views/layouts/default.ctp, line 94]
+2009-12-11 06:33:38 Notice: Notice (8): Undefined variable: comment_author_email in [/home/lunks/www/apps/blog/views/layouts/default.ctp, line 97]
+2009-12-11 06:33:51 Notice: Notice (8): Undefined variable: comment_author_email in [/home/lunks/www/apps/blog/views/layouts/default.ctp, line 97]
+2009-12-11 06:34:23 Notice: Notice (8): Undefined variable: comment_author_url in [/home/lunks/www/apps/blog/views/layouts/default.ctp, line 101]
