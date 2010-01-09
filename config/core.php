@@ -85,7 +85,7 @@
 /**
  * Uncomment the define below to use CakePHP prefix routes.
  *
- * Set to an array of prefixes you want to use in your application. Use for 
+ * Set to an array of prefixes you want to use in your application. Use for
  * admin or other prefixed routes.
  *
  * 	Routing.prefixes = array('admin', 'manager');
@@ -295,4 +295,10 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+
+	Configure::write('name', 'Muffin');
+	Configure::write('description', 'Just another baked blog');
+	Configure::write('twitter', 'http://twitter.com/lunks');
+	Configure::write('email', 'mailto:pnascimento [at] gmail [dot] com');
+	Configure::write('author', 'Pedro Nascimento');
 ?>

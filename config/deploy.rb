@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'capcake'
-set :application, "sportcar"
-set :repository,  "git://msi/sportcar.git"
+set :application, "blog"
+set :repository,  "git://github.com/lunks/Blog.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

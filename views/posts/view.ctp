@@ -1,73 +1,49 @@
-<div class="posts view">
-<h2><?php  __('Post');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $post['Post']['id']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $post['Post']['title']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Text'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $post['Post']['text']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Category'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($post['Category']['name'], array('controller' => 'categories', 'action' => 'view', $post['Category']['id'])); ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(sprintf(__('Edit %s', true), __('Post', true)), array('action' => 'edit', $post['Post']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('Delete %s', true), __('Post', true)), array('action' => 'delete', $post['Post']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $post['Post']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('List %s', true), __('Posts', true)), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('New %s', true), __('Post', true)), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('List %s', true), __('Categories', true)), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('New %s', true), __('Category', true)), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('List %s', true), __('Tags', true)), array('controller' => 'tags', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(sprintf(__('New %s', true), __('Tag', true)), array('controller' => 'tags', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php printf(__('Related %s', true), __('Tags', true));?></h3>
-	<?php if (!empty($post['Tag'])):?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Name'); ?></th>
-		<th class="actions"><?php __('Actions');?></th>
-	</tr>
-	<?php
-		$i = 0;
-		foreach ($post['Tag'] as $tag):
-			$class = null;
-			if ($i++ % 2 == 0) {
-				$class = ' class="altrow"';
-			}
-		?>
-		<tr<?php echo $class;?>>
-			<td><?php echo $tag['id'];?></td>
-			<td><?php echo $tag['name'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'tags', 'action' => 'view', $tag['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'tags', 'action' => 'edit', $tag['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'tags', 'action' => 'delete', $tag['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $tag['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
+    <div id="post-1" class="post">
+      <div class="post-header">
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(sprintf(__('New %s', true), __('Tag', true)), array('controller' => 'tags', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+        <div class="date">25 jan <span>2009</span></div>
+        <h2><a href="#" rel="bookmark" title="titulo">Titulo</a></h2>
+          <div class="author">by Pedro Nascimento</div>
+      </div><!--end post header-->
+      <div class="entry clear">
+      <?php //echo $content_for_layout; //TODO Por texto?>
+      <a href="#">Read more...</a>
+      </div><!--end entry-->
+      <div class="post-footer">
+        <div class="comments"><a href="#">Leave a comment</a></div>
+      </div><!--end post footer-->
+    </div><!--end post-->
+    <div id="comments">
+      <div class="comment-number"><span>One Comment</span>
+      <a id="leavecomment" href="#respond" title="Leave one"> &rarr;</a>
+      </div><!--end comment-number-->
+      <p class="note">Comments are closed.</p>
+      </div><!--end comments-->
+      <div id="respond">
+      <h4 id="postcomment">Leave a reply</h4>
+      <form method="post" id="commentform">
+
+        <fieldset>
+          <label for="author" class="comment-field"><small>Name (required):</small></label>
+          <input class="text-input" type="text" name="author" id="author" value=""  tabindex="1" />
+        </fieldset>
+        <label for="email" class="comment-field"><small>Email: (required):</small></label>
+          <input class="text-input" type="text" name="email" id="email" value="" tabindex="2" />
+        </fieldset>
+        <fieldset>
+          <label for="url" class="comment-field"><small>Website:</small></label>
+          <input class="text-input" type="text" name="url" id="url" value="" tabindex="3" />
+        </fieldset>
+        <label for="comment" class="comment-field"><small>Comment:</small></label>
+        <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea>
+      </fieldset>
+      <p class="guidelines"><strong>Note:</strong> XHTML is allowed. Your email address will <strong>never</strong> be published.</p>
+      <p class="comments-rss"><a href="#">Subscribe to this comment feed via RSS</a></p>
+      <fieldset>
+        <input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+        <input type="hidden" name="comment_post_ID" value="id" />
+      </fieldset>
+      </form>
+
+    </div><!--end respond-->
+
